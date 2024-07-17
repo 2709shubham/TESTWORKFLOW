@@ -24,21 +24,3 @@ jobs:
         with:
           github-token: ${{ secrets.ADMIN_TOKEN }}
     
-
-      # Install the GitHub CLI
-      - name: Install GitHub CLI
-        run: |
-          sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
-          sudo apt-add-repository https://cli.github.com/packages
-          sudo apt update
-          sudo apt install gh -y
-
-      # Debug: Verify GitHub CLI installation
-      - name: Check GitHub CLI version
-        run: gh --version
-
-      # Merge the pull request
-      - name: Merge pull request
-        run: gh pr merge ${{ github.event.pull_request.number }} --merge --admin --repo ${{ github.repository }}
-        env:
-          GITHUB_TOKEN: ${{ secrets.ADMIN_TOKEN }}
