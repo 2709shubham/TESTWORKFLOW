@@ -42,5 +42,7 @@ jobs:
         if: steps.auto_approve.outputs.success == 'true'
         run: gh pr merge ${{ github.event.pull_request.number }} --merge --admin --repo ${{ github.repository }}
         env:
-          GITHUB_TOKEN: ${{ secrets.ADMIN_TOKEN }}    
+          GITHUB_TOKEN: ${{ secrets.ADMIN_TOKEN }}   
+        with:
+          github-token: ${{ secrets.ADMIN_TOKEN }}
     
