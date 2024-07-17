@@ -15,7 +15,7 @@ jobs:
       
       - name: Print TOken
         run:   |
-          echo ${{ secrets.ADMIN_TOKE }}
+          echo ${{ secrets.ADMIN_TOKEN }}
       
       # Auto-approve the pull request
       - name: Auto-approve PR
