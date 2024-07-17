@@ -11,7 +11,7 @@ jobs:
     steps:
       # Check out the repository
       - name: Check out repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       
       - name: Print TOken
         run:   |
@@ -20,7 +20,7 @@ jobs:
       # Auto-approve the pull request
       - name: Auto-approve PR
         id: auto_approve
-        uses: hmarr/auto-approve-action@v2.0.0
+        uses: hmarr/auto-approve-action@v4
         env:
           GITHUB_TOKEN: ${{ secrets.ADMIN_TOKEN }}
     
