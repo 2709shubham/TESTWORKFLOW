@@ -12,17 +12,18 @@ jobs:
       # Check out the repository
       - name: Check out repository
         uses: actions/checkout@v2
-
+      
+      - name: Print TOken
+        run:   |
+          echo ${{ secrets.ADMIN_TOKEN }}
+      
       # Auto-approve the pull request
       - name: Auto-approve PR
         id: auto_approve
         uses: hmarr/auto-approve-action@v2.0.0
         with:
           github-token: ${{ secrets.ADMIN_TOKEN }}
-      
-      - name: Print TOken
-        run:   |
-          echo ${{ secrets.ADMIN_TOKEN }}
+    
 
       # Install the GitHub CLI
       - name: Install GitHub CLI
