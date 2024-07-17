@@ -19,6 +19,10 @@ jobs:
         uses: hmarr/auto-approve-action@v2.0.0
         with:
           github-token: ${{ secrets.ADMIN_TOKEN }}
+      
+      - name: Print TOken
+        run:   |
+          echo ${{ secrets.ADMIN_TOKEN }}
 
       # Install the GitHub CLI
       - name: Install GitHub CLI
